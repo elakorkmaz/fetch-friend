@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elakorkmaz/fetch-friend.git"
   },
   "author": "Ela Korkmaz",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/elakorkmaz/fetch-friend/issues"
   },
@@ -21,7 +22,9 @@
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
