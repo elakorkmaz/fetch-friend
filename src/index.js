@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./App.css";
 
 class BreedsList extends React.Component {
   constructor (props){
@@ -29,6 +30,8 @@ class BreedsList extends React.Component {
       }
     );
   }
+  
+
 
   render() {
     const { error, isLoaded, breeds } = this.state;
@@ -41,7 +44,11 @@ class BreedsList extends React.Component {
         <ul>
           {breeds.map(breed => (
             <li key={breed}>
-              {breed}
+              <button 
+                className="btn"
+                onClick={this.props.handleClick}>
+                {breed}
+              </button>
             </li>
           ))}
         </ul>

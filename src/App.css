@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+}
+
+.btn {
+  font-size: 14px;
+  background-color: lightblue;
+  display: inline-block;
+	margin: 10px;
+  border-style: none;
+  border-radius: 5px;
+	position: relative;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.btn:hover {
+  background-color: pink;
+}
+
+ul {
+  margin-left: auto 0;
+  list-style: none;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+}
+
+h1, p {
+  text-align: center;
+}
