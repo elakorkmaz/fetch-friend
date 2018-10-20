@@ -2,6 +2,49 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
 
+class Images extends React.Component {
+  constructor (props){
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      images: []
+    };
+  }
+
+  componentDidMount() {  
+  fetch("https://dog.ceo/api/breed/hound/images")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          images: result.message
+        });
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    );
+  }
+  
+  render() {
+    let { error, isLoaded, images } = this.state;
+    if (error) {
+      return <div> Error: {error.message} </div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      var image = images[Math.floor(Math.random() * images.length)];
+      return <img src={image} className="image" />
+    }
+  }
+
+}
+  
 class BreedsList extends React.Component {
   constructor (props){
     super(props);
@@ -30,13 +73,11 @@ class BreedsList extends React.Component {
       }
     );
   }
-  
-
 
   render() {
     const { error, isLoaded, breeds } = this.state;
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div> Error: {error.message} </div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
@@ -59,3 +100,4 @@ class BreedsList extends React.Component {
 }
 
 ReactDOM.render(<BreedsList/>, document.getElementById("root"));
+ReactDOM.render(<Images/>, document.getElementById("photo"));

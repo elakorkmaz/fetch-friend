@@ -21,15 +21,40 @@ body {
 }
 
 ul {
-  margin-left: auto 0;
+  padding-left: 0;
+  margin-top: 0;
   list-style: none;
+  height: 500px;
+  overflow: scroll;
   text-align: center;
-}
-
-li {
-  display: inline-block;
+  border-width: 1px;
+  border-color: red;
+  border-style: solid;
 }
 
 h1, p {
   text-align: center;
+}
+
+#wrapper {
+  text-align: center;
+  padding-top: 20px
+}
+
+#root {
+  display: inline-block;
+  width: 40%;
+  float: left;
+}
+
+#photo {
+  width: 40%;
+  margin: auto 0;
+  height: 500px;
+  display: inline-block;
+  background-color: yellow;
+}
+
+.image {
+  width: 100%;
 }
